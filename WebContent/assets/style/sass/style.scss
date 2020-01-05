@@ -1,3 +1,7 @@
+@import 'color';
+
 body {
-    background: black;
+
+    background-color: var(--color-main-black);
+
 }
