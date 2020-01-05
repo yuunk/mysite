@@ -1,0 +1,137 @@
+@import 'color';
+@import 'font';
+@import 'common';
+
+body {
+
+    background-color: var(--color-main-black);
+
+}
+
+
+.section {
+
+    padding: 2rem;
+    padding-bottom: 4rem;
+
+    &:nth-child(even) {
+
+        background-color: white;
+        
+        & > .section__title {
+
+            color: var(--color-font-section-title);
+
+        }
+
+    }
+
+    &:nth-child(odd) {
+
+        color: white;
+
+    }
+
+    .wrap-section__content {
+
+        margin-top: 2rem;
+
+    }
+
+    &__title {
+
+        // color: var(--color-font-content-title);
+        font-family: var(--font-content-title);
+        font-size: 2.5rem;
+        text-transform: uppercase;
+
+    }
+
+}
+
+.first-view {
+
+    align-items: center;
+    // background-color: black;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+
+    .greeting {
+
+        color: white;
+        font-family: var(--font-first-view);
+        font-size: 4rem;
+        padding: .8rem;
+
+        .gt {
+
+            &__none-person-name {
+
+                color: var(--color-accent-purple);
+
+            }
+
+            &__symbol {
+
+                color: var(--color-accent-green);
+
+            }
+
+        }
+
+    }
+
+}
+
+.about {
+
+    // background-color: var(--color-main-white);
+    height: 10rem;
+
+    &__text {
+
+        // font-family: var(--font-paragraph);
+        // font-family: Roboto;
+        font-family: var(--font-paragraph);
+
+    }
+
+}
+
+.skill {
+
+    &-list {
+
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &__child {
+
+            $skillListHeight: 4rem;
+
+            // background: linear-gradient(to bottom right, var(--color-accent-green), orange, var(--color-accent-purple));
+            background-color: var(--color-accent-purple);
+            border-radius: 2rem;
+            border: solid 2px var(--color-accent-green);
+            color: white;
+            font-size: 1.5rem;
+            font-family: var(--font-paragraph);
+            height: $skillListHeight;
+            line-height: $skillListHeight;
+            text-align: center;
+            width: 15rem;
+
+            &:not(:first-child) {
+
+                margin-top: 1rem;
+
+            }
+
+        }
+
+    }
+
+}
