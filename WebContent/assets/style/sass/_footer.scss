@@ -1,0 +1,46 @@
+.contact {
+
+    background: linear-gradient(to bottom right, var(--color-accent-purple), var(--color-accent-green));
+    box-sizing: border-box;
+    height: 25rem;
+
+    .ct {
+
+        $titleFontSize: 4.8rem * 0.7;
+
+        &__title {
+
+            color: white;
+            font-family: var(--font-content-title);
+            font-size: $titleFontSize;
+            // text-align: center;
+
+        }
+
+        &__list {
+
+            align-items: flex-end;
+            flex-direction: column;
+            display: flex;
+
+            // flex-wrap: wrap;
+            font-family: var(--font-main);
+            font-size: $titleFontSize * 0.7;
+            justify-content: space-around;
+            height: 15rem;
+            // padding-left: 3rem;
+            // line-height: 15rem;
+            width: 100%;
+
+            & > li {
+                
+                // text-align: right;
+                width: 30%;
+
+            }
+
+        }
+
+    }
+
+}
