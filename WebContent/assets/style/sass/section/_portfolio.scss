@@ -4,15 +4,13 @@
     display: flex;
     flex-direction: column;
     
+    $childHeight: 22rem;
 
     &__child {
-        $childHeight: 13rem;
-
         // background-color: rgb(165, 165, 30);
         border-radius: 50%;
         color: white;
         font-family: var(--font-paragraph);
-        font-size: 1.5rem;
         height: $childHeight;
         // line-height: $childHeight;
         overflow: hidden;
@@ -22,7 +20,7 @@
 
         &:not(:first-child) {
 
-            margin-top: 2rem;
+            margin-top: 3rem;
     
         }
 
@@ -30,26 +28,88 @@
 
     &__img {
 
+        border-radius: 50%;
         height: 100%;
-        // left: 0;
-        // position: absolute;
-        // top: 0;
         width: 100%;
-        // z-index: -10;
 
     }
 
-    &__title {
+    &__link {
 
-        background: rgba(0, 0, 0, 0.8);
-        // bottom: 0;
+        border-radius: 50%;
+        color: white;
         height: 100%;
         position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        &:hover {
+
+            & .portfolio-text {
+
+                transform: translateY(0rem);
+                transition: .5s;
+
+            }
+
+            & .pt__title {
+
+                padding-top: 1rem;
+
+            }
+
+        }
+
+    }
+
+    .portfolio-text {
+
+        backdrop-filter: blur(.2rem);
+        background: rgba(0, 0, 0, 0.8);
+        box-sizing: border-box;
+        font-family: var(--font-paragraph);
+        height: 100%;
+        pointer-events: none;
+        position: absolute;
         text-align: center;
-        transform: translateY(-);
+        transform: translateY(15rem);
+        transition: .5s;
         top: 0;
         width: 100%;
-        
+
+        .pt {
+
+            $titleFontSize: 2.3rem;
+            &__title {
+
+                box-sizing: border-box;
+                font-size: $titleFontSize;
+                height: $childHeight * 0.3;
+                line-height: $childHeight * 0.3;
+                // padding-top: 1rem;
+
+            }
+
+            &__description {
+
+                box-sizing: border-box;
+                font-size: $titleFontSize * 0.7;
+                height: $childHeight * 0.5;
+                padding-top: 2rem;
+
+            }
+
+            &__updated-at {
+
+                height: $childHeight * 0.2;
+                line-height: $childHeight * 0.2;
+
+            }
+
+        }
+
     }
 
 }
+
