@@ -12,8 +12,8 @@ body {
 
 .section {
 
-    padding: 2rem;
-    padding-bottom: 4rem;
+    padding: 3.2rem;
+    padding-bottom: 6.4rem;
 
     &:nth-child(even) {
 
@@ -35,7 +35,7 @@ body {
 
     .wrap-section__content {
 
-        margin-top: 3rem;
+        margin-top: 4.8rem;
 
     }
 
@@ -43,7 +43,7 @@ body {
 
         // color: var(--color-font-content-title);
         font-family: var(--font-content-title);
-        font-size: 3rem;
+        font-size: 4.8rem;
         text-transform: uppercase;
 
     }
@@ -62,8 +62,8 @@ body {
 
         color: white;
         font-family: var(--font-first-view);
-        font-size: 4rem;
-        padding: .8rem;
+        font-size: 6.4rem;
+        padding: 1.3rem;
 
         .gt {
 
@@ -88,13 +88,12 @@ body {
 .about {
 
     // background-color: var(--color-main-white);
-    height: 10rem;
+    height: 16rem;
 
     &__text {
 
-        // font-family: var(--font-paragraph);
-        // font-family: Roboto;
         font-family: var(--font-paragraph);
+        font-size: 1.6rem;
 
     }
 
@@ -111,23 +110,23 @@ body {
 
         &__child {
 
-            $skillListHeight: 4rem;
+            $skillListHeight: 6.4rem;
 
             // background: linear-gradient(to bottom right, var(--color-accent-green), orange, var(--color-accent-purple));
             background-color: var(--color-accent-purple);
-            border-radius: 2rem;
+            border-radius: 3.2rem;
             border: solid 2px var(--color-accent-green);
             color: white;
-            font-size: 1.3rem;
+            font-size: 2rem;
             font-family: var(--font-paragraph);
             height: $skillListHeight;
             line-height: $skillListHeight;
             text-align: center;
-            width: 15rem;
+            width: 24rem;
 
             &:not(:first-child) {
 
-                margin-top: 1rem;
+                margin-top: 1.6rem;
 
             }
 
