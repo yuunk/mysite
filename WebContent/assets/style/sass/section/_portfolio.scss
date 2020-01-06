@@ -8,19 +8,29 @@
 
     &__child {
         // background-color: rgb(165, 165, 30);
+        border: 5px solid var(--color-accent-purple);
         border-radius: 50%;
+        box-shadow: 0 0 8px gray;
         color: white;
-        font-family: var(--font-paragraph);
+        // font-family: var(--font-paragraph);
         height: $childHeight;
         // line-height: $childHeight;
         overflow: hidden;
         position: relative;
+        transition: 1s;
         // text-align: center;
         width: $childHeight;
 
         &:not(:first-child) {
 
             margin-top: 3rem;
+    
+        }
+
+        &:hover {
+
+            border: 5px solid var(--color-accent-green);
+            transition: 1s;
     
         }
 
@@ -66,9 +76,10 @@
     .portfolio-text {
 
         backdrop-filter: blur(.2rem);
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(78, 78, 78, 0.8);
         box-sizing: border-box;
-        font-family: var(--font-paragraph);
+        // font-family: var(--font-paragraph);
+        font-family: var(--font-main);
         height: 100%;
         pointer-events: none;
         position: absolute;
@@ -85,6 +96,7 @@
 
                 box-sizing: border-box;
                 font-size: $titleFontSize;
+                // font-weight: normal;
                 height: $childHeight * 0.3;
                 line-height: $childHeight * 0.3;
                 // padding-top: 1rem;
