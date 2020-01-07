@@ -58,8 +58,9 @@ function activateIndex(element) {
     }
     // 引数で渡されたDOMが飛び先のaタグを選択し、activeクラスを付与
     const newActiveIndex = document.querySelector(`a[href='#${element.id}']`);
-    console.log(element.id);
+    console.log(String(element.id));
     console.log(newActiveIndex);
     // document.getElementById(element.id).classList.add('nav-active'); 
     newActiveIndex.classList.add("nav-active");
+
   }

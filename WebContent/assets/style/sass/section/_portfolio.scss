@@ -1,3 +1,26 @@
+@keyframes rotate {
+
+    0% {
+
+        transform: translateX(100px);
+        opacity: 0;
+
+    }
+
+    50% {
+
+
+    }
+
+    100% {
+
+        // transform: translateY();
+        // transform: rotate(1turn);
+
+    }
+
+}
+
 .portfolio-list {
 
     align-items: center;
@@ -19,6 +42,9 @@
         position: relative;
         transition: 1s;
         // text-align: center;
+
+        animation: rotate 0.5s linear 0s;
+
         width: $childHeight;
 
         &:not(:first-child) {
