@@ -18,7 +18,7 @@
 .header {
 
     // background: rgba(145, 255, 0, 0.7);
-    height: 100vh;
+    height: 70vh;
     position: fixed;
     right: 0;
     width: 4rem;
@@ -91,9 +91,10 @@
 
     }
 
-    .nav-list:hover {
+}
 
+.nav-active {
 
-    }
+    border-left: solid 2px var(--color-accent-green);
 
 }
