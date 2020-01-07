@@ -3,14 +3,13 @@
     0% {
 
         // color: var(--color-accent-purple);
-        color: black
+        transform: translateY(100%);
 
     }
 
     100% {
 
-        // color: var(--color-accent-green);
-        color: white;
+        transform: translateY(0);
 
     }
 
@@ -24,6 +23,14 @@
     right: 0;
     width: 4rem;
     z-index: 20;
+
+    animation-name: toggleFontColor;
+    animation-duration: 1s;
+    // animation-name: toggleFontColor;
+        // animation-duration: 1s;
+        // animation-timing-function: linear;
+        // animation-iteration-count: infinite;
+        // animation-direction: alternate;
 
     & nav {
 
@@ -66,6 +73,8 @@
         -webkit-background-clip: text;
         color: transparent;
 
+        // border-left: 1px solid red;
+
         // color: var(--color-accent-purple);
         font-size: 2rem;
         font-family: var(--font-main);
@@ -78,11 +87,7 @@
         // height: 100%;
         transition: 1s;
 
-        // animation-name: toggleFontColor;
-        // animation-duration: 1s;
-        // animation-timing-function: linear;
-        // animation-iteration-count: infinite;
-        // animation-direction: alternate;
+        
 
     }
 
