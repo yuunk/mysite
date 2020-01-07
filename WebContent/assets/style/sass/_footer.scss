@@ -2,7 +2,8 @@
 
     // background: linear-gradient(to bottom right, var(--color-accent-purple), var(--color-accent-green), orange);
     box-sizing: border-box;
-    height: 25rem;
+    height: 30rem;
+    // height: 100vh;
     // transition: 1s;
 
     position: relative;
@@ -100,5 +101,11 @@
 .scrollEqualBtm {
 
     opacity: 0;
+
+}
+
+.hoge {
+
+    // transform: scale(1, 2);
 
 }
