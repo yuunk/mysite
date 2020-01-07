@@ -1,6 +1,7 @@
 @import 'color';
 @import 'font';
 @import 'common';
+@import 'header';
 @import 'section/portfolio';
 @import 'footer';
 
@@ -16,7 +17,7 @@ body {
     padding: 3.2rem;
     padding-bottom: 6.4rem;
 
-    &:nth-child(even) {
+    &:nth-child(odd) {
 
         background-color: white;
         
@@ -28,7 +29,7 @@ body {
 
     }
 
-    &:nth-child(odd) {
+    &:nth-child(even) {
 
         color: white;
 
