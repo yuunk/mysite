@@ -1,0 +1,84 @@
+@keyframes firstProgress {
+
+    0% {
+
+        width: 100%;
+
+    }
+
+    100% {
+
+        width: 80%;
+
+    }
+
+}
+
+@keyframes load {
+
+    0% {
+
+        width: 0%;
+
+    }
+
+    100% {
+
+        width: 100%;
+
+    }
+
+}
+
+.load {
+
+    animation: load .5s forwards;
+
+}
+
+.hideLoading {
+
+    opacity: 0;
+    transition: 1s;
+
+}
+
+.loading {
+
+    align-items: center;
+    background-color: var(--color-main-black);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+
+    .ld {
+
+        &__max-size {
+
+            background-color: paleturquoise;
+            height: 2rem;
+            position: relative;
+            animation: firstProgress 1s forwards;
+            width: 30rem;
+
+        }
+
+        &__progress {
+
+            background-color: palevioletred;
+            height: 100%;
+            left: 0;
+            top: 0;
+            position: absolute;
+            // width: 100%;
+
+        }
+
+    }
+
+}
