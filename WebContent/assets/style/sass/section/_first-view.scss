@@ -1,0 +1,34 @@
+.first-view {
+
+    align-items: center;
+    // background-color: black;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+
+    .greeting {
+
+        color: white;
+        font-family: var(--font-first-view);
+        font-size: 6.4rem;
+        padding: 1.3rem;
+
+        .gt {
+
+            &__none-person-name {
+
+                color: var(--color-accent-purple);
+
+            }
+
+            &__symbol {
+
+                color: var(--color-accent-green);
+
+            }
+
+        }
+
+    }
+
+}
