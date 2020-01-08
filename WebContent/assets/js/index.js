@@ -64,3 +64,14 @@ function activateIndex(element) {
     newActiveIndex.classList.add("nav-active");
 
   }
+
+  window.onload = function () {
+
+    var particles = Particles.init({
+        selector: '.background',
+        sizeVariations: 10,
+        color: ['#50FF50', '#C047F3', '#DBEDF3'],
+        connectParticles: true
+      });
+
+  }

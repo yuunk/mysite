@@ -18,7 +18,7 @@ body {
     padding: 3.2rem;
     padding-bottom: 10rem;
 
-    &:nth-child(odd) {
+    &:nth-child(even) {
 
         background-color: white;
         
@@ -30,7 +30,7 @@ body {
 
     }
 
-    &:nth-child(even) {
+    &:nth-child(odd) {
 
         color: white;
 
