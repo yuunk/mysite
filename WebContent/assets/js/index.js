@@ -1,15 +1,16 @@
 const gradationMask = document.getElementById('gradationMask');
 const contact = document.getElementById('contact');
+const header = document.getElementById('header');
 
 window.addEventListener('scroll', () => {
 
     var maxHeight = Math.max.apply(null, [document.body.clientHeight, document.body.scrollHeight, document.documentElement.scrollHeight, document.documentElement.clientHeight]);
 
     var nowHeight = document.documentElement.clientHeight + document.documentElement.scrollTop;
+    console.log(document.documentElement.scrollTop);
 
     if (maxHeight === nowHeight) {
 
-        console.log('ok');
         gradationMask.classList.add('scrollEqualBtm');
         contact.classList.add('hoge');
 
@@ -17,6 +18,17 @@ window.addEventListener('scroll', () => {
 
         gradationMask.classList.remove('scrollEqualBtm');
         contact.classList.remove('hoge');
+
+    }
+
+    // header hide animation
+    if (document.documentElement.scrollTop === 0) {
+
+        header.classList.remove('showHeader');
+        header.classList.add('hideHeader');
+        setTimeout(() => {
+            header.classList.remove('hideHeader');
+        }, 1000);
 
     }
 
@@ -49,6 +61,7 @@ function doWhenIntersect(entries) {
     });
 }
 
+
 function activateIndex(element) {
     console.log(element)
     const currentActiveIndex = document.querySelector("#navLists .nav-active");
@@ -60,6 +73,23 @@ function activateIndex(element) {
     const newActiveIndex = document.querySelector(`a[href='#${element.id}']`);
     console.log(String(element.id));
     console.log(newActiveIndex);
+
+    if (String(element.id) === 'top' && header.classList.contains('hoge5')) {
+
+        // header.classList.remove('hoge5');
+        // header.classList.add('hoge6');
+        // setTimeout(() => {
+        //     header.classList.remove('hoge6');
+        // }, 1000);
+
+    }
+
+    if (String(element.id) === 'about') {
+        console.log('ok');
+
+        header.classList.add('showHeader');
+
+    }
     // document.getElementById(element.id).classList.add('nav-active'); 
     newActiveIndex.classList.add("nav-active");
 
