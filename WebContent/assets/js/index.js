@@ -2,6 +2,35 @@ const gradationMask = document.getElementById('gradationMask');
 const contact = document.getElementById('contact');
 const header = document.getElementById('header');
 
+// progress
+const progress = document.getElementById('progress');
+
+
+let promise = new Promise((resolve, reject) => { // #1
+    
+    setTimeout(() => {
+
+        progress.classList.add('load');
+        resolve();
+    
+    }, 2000);
+
+  })
+  
+  promise.then((msg) => { // #2
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        document.getElementById('loading').classList.add('hideLoading');
+      }, 1000)
+    })
+  }).then((msg) => { // #3
+    console.log('#3')
+    return msg + 'Jeccy.'
+  }).catch(() => { // エラーハンドリング
+    console.error('Something wrong!')
+  });
+
+
 window.addEventListener('scroll', () => {
 
     var maxHeight = Math.max.apply(null, [document.body.clientHeight, document.body.scrollHeight, document.documentElement.scrollHeight, document.documentElement.clientHeight]);
