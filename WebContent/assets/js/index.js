@@ -5,8 +5,7 @@ const header = document.getElementById('header');
 // progress
 const progress = document.getElementById('progress');
 
-
-let promise = new Promise((resolve, reject) => { // #1
+let promise = new Promise((resolve, reject) => {
     
     setTimeout(() => {
 
@@ -17,16 +16,13 @@ let promise = new Promise((resolve, reject) => { // #1
 
   })
   
-  promise.then((msg) => { // #2
+  promise.then(() => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         document.getElementById('loading').classList.add('hideLoading');
       }, 1000)
     })
-  }).then((msg) => { // #3
-    console.log('#3')
-    return msg + 'Jeccy.'
-  }).catch(() => { // エラーハンドリング
+  }).catch(() => {
     console.error('Something wrong!')
   });
 
