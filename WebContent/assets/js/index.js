@@ -13,7 +13,7 @@ let promise = new Promise((resolve, reject) => { // #1
         progress.classList.add('load');
         resolve();
     
-    }, 2000);
+    }, 1000);
 
   })
   
