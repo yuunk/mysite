@@ -20,8 +20,14 @@ let promise = new Promise((resolve, reject) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         document.getElementById('loading').classList.add('hideLoading');
+        resolve();
       }, 1000)
     })
+  }).then(() => {
+
+    console.log('hello');
+    document.getElementById('loading').classList.add('hide');
+
   }).catch(() => {
     console.error('Something wrong!')
   });
