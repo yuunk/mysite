@@ -4,6 +4,7 @@
 @import 'header';
 @import 'section/loading';
 @import 'section/first-view';
+@import 'section/about';
 @import 'section/portfolio';
 @import 'footer';
 
@@ -49,21 +50,6 @@ body {
         font-family: var(--font-content-title);
         font-size: 4.8rem;
         text-transform: uppercase;
-
-    }
-
-}
-
-
-.about {
-
-    // background-color: var(--color-main-white);
-    height: 16rem;
-
-    &__text {
-
-        font-family: var(--font-paragraph-ja);
-        font-size: 1.6rem;
 
     }
 
