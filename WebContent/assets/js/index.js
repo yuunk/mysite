@@ -6,70 +6,71 @@ const header = document.getElementById('header');
 const progress = document.getElementById('progress');
 
 let promise = new Promise((resolve, reject) => {
-    
-    setTimeout(() => {
 
-        progress.classList.add('load');
-        resolve();
-    
-    }, 1000);
+  setTimeout(() => {
 
-  })
-  
-  promise.then(() => {
+    progress.classList.add('load');
+    resolve();
 
-    return new Promise((resolve, reject) => {
+  }, 1000);
 
-      setTimeout(() => {
+})
 
-        document.getElementById('loading').classList.add('hideLoading');
-        resolve();
+promise.then(() => {
 
-      }, 1000);
-    })
-  }).then(() => {
+  return new Promise((resolve, reject) => {
 
     setTimeout(() => {
-      
-      document.getElementById('loading').classList.add('hide');
+
+      document.getElementById('loading').classList.add('hideLoading');
       document.body.classList.remove('fixed');
+      scrollTo(0, 0);
+      resolve();
 
     }, 1000);
+  })
+}).then(() => {
 
-  }).catch(() => {
-    console.error('anime fail')
-  });
+  setTimeout(() => {
+
+    document.getElementById('loading').classList.add('hide');
+
+  }, 1000);
+
+}).catch(() => {
+  console.error('anime fail')
+});
 
 
 window.addEventListener('scroll', () => {
 
-    var maxHeight = Math.max.apply(null, [document.body.clientHeight, document.body.scrollHeight, document.documentElement.scrollHeight, document.documentElement.clientHeight]);
+  var maxHeight = Math.max.apply(null, [document.body.clientHeight, document.body.scrollHeight, document.documentElement.scrollHeight, document.documentElement.clientHeight]);
 
-    var nowHeight = document.documentElement.clientHeight + document.documentElement.scrollTop;
-    console.log(document.documentElement.scrollTop);
+  var nowHeight = document.documentElement.clientHeight + document.documentElement.scrollTop;
+  console.log(document.documentElement.scrollTop);
 
-    if (maxHeight === nowHeight) {
+  if (maxHeight === nowHeight) {
 
-        gradationMask.classList.add('scrollEqualBtm');
-        contact.classList.add('hoge');
+    gradationMask.classList.add('scrollEqualBtm');
+    contact.classList.add('hoge');
 
-    } else if (gradationMask.classList.contains('scrollEqualBtm')) {
+  } else if (gradationMask.classList.contains('scrollEqualBtm')) {
 
-        gradationMask.classList.remove('scrollEqualBtm');
-        contact.classList.remove('hoge');
+    gradationMask.classList.remove('scrollEqualBtm');
+    contact.classList.remove('hoge');
 
-    }
+  }
 
-    // header hide animation
-    if (document.documentElement.scrollTop === 0) {
+  // header hide animation
+  if (document.documentElement.scrollTop === 0) {
 
-        header.classList.remove('showHeader');
-        header.classList.add('hideHeader');
-        setTimeout(() => {
-            header.classList.remove('hideHeader');
-        }, 1000);
+    header.classList.remove('showHeader');
+    header.classList.add('hideHeader');
+    setTimeout(() => {
+      header.classList.remove('hideHeader');
+    }, 1000);
 
-    }
+  }
 
 });
 
@@ -81,66 +82,76 @@ const navChildren = document.querySelectorAll('.nav-children');
 
 const options = {
 
-    root: null,
-    rootMargin: '-50% 0px',
-    threshold: 0
+  root: null,
+  rootMargin: '-50% 0px',
+  threshold: 0
 
 };
 
 const observer = new IntersectionObserver(doWhenIntersect, options);
 navChildren.forEach(child => {
-    observer.observe(child);
+  observer.observe(child);
 });
 
 function doWhenIntersect(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            activateIndex(entry.target);
-        }
-    });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      activateIndex(entry.target);
+    }
+  });
 }
 
 
 function activateIndex(element) {
-    console.log(element)
-    const currentActiveIndex = document.querySelector("#navLists .nav-active");
+  console.log(element)
+  const currentActiveIndex = document.querySelector("#navLists .nav-active");
 
-    if (currentActiveIndex !== null) {
-      currentActiveIndex.classList.remove("nav-active");
-    }
-    // 引数で渡されたDOMが飛び先のaタグを選択し、activeクラスを付与
-    const newActiveIndex = document.querySelector(`a[href='#${element.id}']`);
-    console.log(String(element.id));
-    console.log(newActiveIndex);
+  if (currentActiveIndex !== null) {
+    currentActiveIndex.classList.remove("nav-active");
+  }
+  // 引数で渡されたDOMが飛び先のaタグを選択し、activeクラスを付与
+  const newActiveIndex = document.querySelector(`a[href='#${element.id}']`);
+  console.log(String(element.id));
+  console.log(newActiveIndex);
 
-    if (String(element.id) === 'top' && header.classList.contains('hoge5')) {
+  if (String(element.id) === 'top' && header.classList.contains('hoge5')) {
 
-        // header.classList.remove('hoge5');
-        // header.classList.add('hoge6');
-        // setTimeout(() => {
-        //     header.classList.remove('hoge6');
-        // }, 1000);
-
-    }
-
-    if (String(element.id) === 'about') {
-        console.log('ok');
-
-        header.classList.add('showHeader');
-
-    }
-    // document.getElementById(element.id).classList.add('nav-active'); 
-    newActiveIndex.classList.add("nav-active");
+    // header.classList.remove('hoge5');
+    // header.classList.add('hoge6');
+    // setTimeout(() => {
+    //     header.classList.remove('hoge6');
+    // }, 1000);
 
   }
 
-  window.onload = function () {
+  if (String(element.id) === 'about') {
+    console.log('ok');
 
-    var particles = Particles.init({
-        selector: '.background',
-        sizeVariations: 10,
-        color: ['#50FF50', '#C047F3', '#DBEDF3'],
-        connectParticles: true
-      });
+    header.classList.add('showHeader');
 
   }
+  // document.getElementById(element.id).classList.add('nav-active'); 
+  newActiveIndex.classList.add("nav-active");
+
+}
+
+window.onload = function () {
+
+  var particles = Particles.init({
+    selector: '.background',
+    sizeVariations: 10,
+    color: ['#50FF50', '#C047F3', '#DBEDF3'],
+    connectParticles: true
+  });
+
+}
+
+
+if (window.performance) {
+  if (performance.navigation.type === 1) {
+    // リロードされた
+
+  } else {
+    // リロードされていない
+  }
+}
