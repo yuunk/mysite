@@ -109,7 +109,7 @@ function activateIndex(element) {
   if (currentActiveIndex !== null) {
     currentActiveIndex.classList.remove("nav-active");
   }
-  // 引数で渡されたDOMが飛び先のaタグを選択し、activeクラスを付与
+ 
   const newActiveIndex = document.querySelector(`a[href='#${element.id}']`);
   console.log(String(element.id));
   console.log(newActiveIndex);
