@@ -17,19 +17,27 @@ let promise = new Promise((resolve, reject) => {
   })
   
   promise.then(() => {
+
     return new Promise((resolve, reject) => {
+
       setTimeout(() => {
+
         document.getElementById('loading').classList.add('hideLoading');
         resolve();
-      }, 1000)
+
+      }, 1000);
     })
   }).then(() => {
 
-    console.log('hello');
-    document.getElementById('loading').classList.add('hide');
+    setTimeout(() => {
+      
+      document.getElementById('loading').classList.add('hide');
+      document.body.classList.remove('fixed');
+
+    }, 1000);
 
   }).catch(() => {
-    console.error('Something wrong!')
+    console.error('anime fail')
   });
 
 
