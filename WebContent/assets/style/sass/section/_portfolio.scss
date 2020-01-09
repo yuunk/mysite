@@ -22,6 +22,7 @@
 }
 
 $childHeight: 22rem;
+$titleFontSize: 2.3rem;
 
 .portfolio-list {
 
@@ -132,13 +133,13 @@ $childHeight: 22rem;
 
         .pt {
 
-            $titleFontSize: 2.3rem;
             &__title {
 
                 box-sizing: border-box;
                 font-size: $titleFontSize;
                 // font-weight: normal;
-                height: $childHeight * 0.3;
+                // height: $childHeight * 0.3;
+                height: 30%;
                 line-height: $childHeight * 0.3;
                 // padding-top: 1rem;
 
@@ -148,7 +149,7 @@ $childHeight: 22rem;
 
                 box-sizing: border-box;
                 font-size: $titleFontSize * 0.7;
-                height: $childHeight * 0.5;
+                height: 50%;
                 padding-top: 2rem;
 
             }
@@ -156,7 +157,7 @@ $childHeight: 22rem;
             &__updated-at {
 
                 font-size: $titleFontSize * 0.7;
-                height: $childHeight * 0.2;
+                height: 20%;
                 line-height: $childHeight * 0.2;
 
             }
@@ -168,6 +169,8 @@ $childHeight: 22rem;
 }
 
 @media(min-width: 560px) {
+
+    $titleFontSize: $titleFontSize * 1.3;
 
     .portfolio-list {
 
@@ -204,6 +207,20 @@ $childHeight: 22rem;
     
         }
 
+        .portfolio-text {
+
+            transform: translateY(15rem * 1.3);
+
+            &__update-at {
+
+
+
+            }
+    
+        }
+
     }
+
+    
 
 }
