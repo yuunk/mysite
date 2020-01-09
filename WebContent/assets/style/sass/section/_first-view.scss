@@ -1,3 +1,5 @@
+$greetingFontSize: 6.4rem;
+
 .first-view {
 
     align-items: center;
@@ -57,5 +59,19 @@
     display: block;
     top: 0;
     left: 0;
+
+}
+
+@media(min-width: 560px) {
+
+    .first-view {
+
+        .greeting {
+
+            font-size: $greetingFontSize * 2;
+
+        }
+
+    }
 
 }
