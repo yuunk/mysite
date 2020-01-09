@@ -31,9 +31,11 @@
 
     &__child {
         // background-color: rgb(165, 165, 30);
-        border: 5px solid var(--color-accent-purple);
+        // border: 5px solid var(--color-accent-green);
+        border: 10px solid var(--color-accent-purple);
         border-radius: 50%;
-        box-shadow: 0 0 8px gray;
+        // box-shadow: 0 0 8px gray;
+        box-shadow: 0 0 10px gray;
         color: white;
         // font-family: var(--font-paragraph);
         height: $childHeight;
@@ -47,6 +49,18 @@
 
         width: $childHeight;
 
+        &:nth-child(2) {
+
+            border: 10px solid var(--color-accent-green);
+
+        }
+
+        &:nth-child(3) {
+
+            border: 10px solid orange;
+
+        }
+
         &:not(:first-child) {
 
             margin-top: 3rem;
@@ -55,7 +69,7 @@
 
         &:hover {
 
-            border: 5px solid var(--color-accent-green);
+            border: 10px solid var(--color-main-white);
             transition: 1s;
     
         }
